@@ -69,25 +69,55 @@ Complete the following tasks and assign the results to the specified variables. 
 let inputString = "  Welcome to the Coding Bootcamp! Learn JavaScript today.  ";
 
 // 1. Searching
-let hasJavaScript; // Your code here
-let codingPosition; // Your code here
-let startsWithWelcome; // Your code here
-let endsWithToday; // Your code here
+// 1.1 Check if "JavaScript" is in the string
+let hasJavaScript = inputString.includes("JavaScript");
+console.log("Has JavaScript:", hasJavaScript); 
+
+// 1.2 Find the position of "Coding"
+let codingPosition = inputString.indexOf("Coding");
+console.log("Position of 'Coding':", codingPosition); 
+
+// 1.3 Check if the string starts with "Welcome"
+let startsWithWelcome = inputString.startsWith("Welcome"); // Will be false due to leading space
+console.log("Starts with 'Welcome':", startsWithWelcome);
+
+// 1.4 Check if the string ends with "today."
+let endsWithToday = inputString.endsWith("today.");
+console.log("Ends with 'today.':", endsWithToday); // false due to trailing space
 
 // 2. Transforming
-let lowercaseString; // Your code here
-let uppercaseString; // Your code here
-let trimmedString; // Your code here
-let replacedString; // Your code here
+// 2.1 Convert to lowercase
+let lowercaseString = inputString.toLowerCase();
+console.log("Lowercase:", lowercaseString);
+
+// 2.2 Convert to uppercase
+let uppercaseString = inputString.toUpperCase();
+console.log("Uppercase:", uppercaseString);
+
+// 2.3 Trim extra spaces
+let trimmedString = inputString.trim();
+console.log("Trimmed:", trimmedString);
+
+// 2.4 Replace "JavaScript" with "coding"
+let replacedString = inputString.replace("JavaScript", "coding");
+console.log("Replaced 'JavaScript' with 'coding':", replacedString);
 
 // 3. Breaking Apart
-let wordsArray; // Your code here
+let wordsArray = inputString.trim().split(" ");
+console.log("Words Array:", wordsArray);
 
-// 4. Retrieving
-let firstCharacter; // Your code here
-let extractedBootcamp; // Your code here
+// 4.1 Get first character of trimmed string
+let firstCharacter = trimmedString.charAt(0);
+console.log("First Character:", firstCharacter);
 
-// Log all results
+// 4.2 Extract the word "Bootcamp"
+let extractedBootcamp = inputString.slice(
+  inputString.indexOf("Bootcamp"),
+  inputString.indexOf("Bootcamp") + "Bootcamp".length
+);
+console.log("Extracted 'Bootcamp':", extractedBootcamp); 
+
+/* Log all results
 console.log({
   hasJavaScript,
   codingPosition,
@@ -100,4 +130,4 @@ console.log({
   wordsArray,
   firstCharacter,
   extractedBootcamp,
-});
+});?*/
